@@ -145,32 +145,7 @@ document.querySelectorAll('.trust-mark, .responsibility-card, .approach-point, .
     scrollObserver.observe(el);
 });
 
-// Counter animation for stats
-const statValues = document.querySelectorAll('.stat-value, .stat-number');
-statValues.forEach(stat => {
-    const targetValue = parseInt(stat.textContent);
-    let currentValue = 0;
-    const increment = targetValue / 30;
-    const timer = setInterval(() => {
-        currentValue += increment;
-        if (currentValue >= targetValue) {
-            stat.textContent = targetValue + (stat.textContent.includes('+') ? '+' : '');
-            clearInterval(timer);
-        } else {
-            stat.textContent = Math.floor(currentValue) + (stat.textContent.includes('+') ? '+' : '');
-        }
-    }, 50);
-    
-    // Only start counting when in view
-    const statObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Counter logic here (above)
-            }
-        });
-    });
-    statObserver.observe(stat);
-});
+// REMOVED: Counter animation for stats (since stats were replaced)
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
@@ -269,6 +244,20 @@ partnerCards.forEach(card => {
         card.style.boxShadow = 'var(--shadow-subtle)';
     });
 });
+
+// Open Account CTA hover effect - FIXED
+const accountCtaBtn = document.querySelector('.account-cta-btn');
+if (accountCtaBtn) {
+    accountCtaBtn.addEventListener('mouseenter', () => {
+        accountCtaBtn.style.transform = 'translateY(-5px)';
+        accountCtaBtn.style.boxShadow = '0 15px 40px rgba(16, 185, 129, 0.25)';
+    });
+    
+    accountCtaBtn.addEventListener('mouseleave', () => {
+        accountCtaBtn.style.transform = 'translateY(0)';
+        accountCtaBtn.style.boxShadow = 'var(--shadow-medium)';
+    });
+}
 
 // Animate decorative elements
 function animateDecorativeElements() {

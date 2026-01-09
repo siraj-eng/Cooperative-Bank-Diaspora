@@ -771,43 +771,105 @@ header {
    font-weight: 700;
 }
 
-/* Stats Showcase */
-.stats-showcase {
+
+
+/* Open Account CTA */
+.open-account-cta {
    display: flex;
    align-items: center;
    justify-content: center;
-   gap: 2rem;
-   background: white;
-   padding: 2rem;
-   border-radius: var(--radius-lg);
+   margin-top: 2rem;
+}
+
+.account-cta-btn {
+   display: block;
+   text-decoration: none;
+   background: linear-gradient(135deg, var(--accent-warm), var(--accent-deep));
+   color: white;
+   border-radius: var(--radius-md);
+   overflow: hidden;
+   transition: var(--transition-smooth);
    box-shadow: var(--shadow-medium);
+   width: 100%;
+   max-width: 400px;
 }
 
-.stat-item {
-   text-align: center;
+.account-cta-btn:hover {
+   transform: translateY(-4px);
+   box-shadow: var(--shadow-elevated);
 }
 
-.stat-value {
-   font-family: 'DM Serif Display', serif;
-   font-size: 2.5rem;
-   font-weight: 400;
-   color: var(--accent-deep);
-   line-height: 1;
-   margin-bottom: 8px;
+.cta-wrapper {
+   padding: 1.5rem 2rem;
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
 }
 
-.stat-desc {
-   font-size: 0.85rem;
-   color: var(--text-light);
-   font-weight: 500;
+.cta-icon {
+   width: 50px;
+   height: 50px;
+   background: rgba(255, 255, 255, 0.2);
+   border-radius: var(--radius-md);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+   background: rgba(255, 255, 255, 0.2);
+}
+
+.cta-icon i {
+   font-size: 1.5rem;
+   color: white;
+}
+
+.cta-text {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+}
+
+.cta-main {
+   font-size: 1.3rem;
+   font-weight: 700;
    text-transform: uppercase;
-   letter-spacing: 1px;
+   letter-spacing: 0.5px;
 }
 
-.stat-separator {
-   width: 1px;
-   height: 40px;
-   background: var(--divider-lilac);
+.cta-sub {
+   font-size: 0.9rem;
+   opacity: 0.9;
+   font-weight: 500;
+}
+
+.cta-arrow {
+   transition: var(--transition-smooth);
+   font-size: 1.2rem;
+}
+
+.account-cta-btn:hover .cta-arrow {
+   transform: translateX(5px);
+}
+
+/* Remove old stats showcase styles */
+.stats-showcase {
+   display: none !important;
+}
+
+/* Keep existing responsive styles for the new CTA */
+@media (max-width: 768px) {
+   .account-cta-btn {
+      max-width: 100%;
+   }
+   
+   .cta-wrapper {
+      padding: 1.2rem 1.5rem;
+   }
+   
+   .cta-main {
+      font-size: 1.1rem;
+   }
 }
 
 /* Partnership Section */
