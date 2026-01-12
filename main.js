@@ -10,6 +10,11 @@ const accountCtaBtn = document.querySelector('.account-cta-btn');
 const agentPortrait = document.querySelector('.agent-portrait');
 const heroContent = document.querySelector('.hero-content');
 
+// ===== GLOBAL OBSERVERS =====
+let scrollObserver;
+let servicesObserver;
+let processObserver;
+
 // ===== MOBILE NAVIGATION =====
 function initMobileNavigation() {
     if (!mobileToggle || !navbar) return;
@@ -210,14 +215,28 @@ function initScrollAnimations() {
         rootMargin: '0px 0px -100px 0px'
     };
     
-    const scrollObserver = new IntersectionObserver(handleIntersection, observerOptions);
+    scrollObserver = new IntersectionObserver(handleIntersection, observerOptions);
     
     // Observe elements for animation
-    document.querySelectorAll('.trust-mark, .responsibility-card, .approach-point, .credential-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        scrollObserver.observe(el);
+    const animatableElements = [
+        '.trust-mark',
+        '.responsibility-card',
+        '.approach-point',
+        '.credential-item',
+        '.services-card',
+        '.client-profile',
+        '.service-item',
+        '.process-step',
+        '.benefit-card'
+    ];
+    
+    animatableElements.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            scrollObserver.observe(el);
+        });
     });
     
     // Add CSS for animations
@@ -237,6 +256,7 @@ function handleIntersection(entries) {
 function addAnimationStyles() {
     const style = document.createElement('style');
     style.textContent = `
+        /* Base Animation Classes */
         .animate-in {
             opacity: 1 !important;
             transform: translateY(0) !important;
@@ -246,6 +266,22 @@ function addAnimationStyles() {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        /* Keyboard Navigation */
+        .keyboard-navigation *:focus {
+            outline: 3px solid var(--accent-warm);
+            outline-offset: 3px;
+        }
+        
+        /* Process Section Specific Animations */
+        .step-card:hover .step-icon {
+            transform: scale(1.1) rotate(5deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card:hover .step-badge {
+            animation: pulse 2s infinite;
         }
     `;
     document.head.appendChild(style);
@@ -268,26 +304,11 @@ function handleKeydown(e) {
     if (e.key === 'Tab') {
         document.body.classList.add('keyboard-navigation');
     }
-    
-    // Add focus styles for keyboard navigation
-    addFocusStyles();
 }
 
 // Handle mouse interaction
 function handleMouseInteraction() {
     document.body.classList.remove('keyboard-navigation');
-}
-
-// Add focus styles for keyboard navigation
-function addFocusStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
-        .keyboard-navigation *:focus {
-            outline: 3px solid var(--accent-warm);
-            outline-offset: 3px;
-        }
-    `;
-    document.head.appendChild(style);
 }
 
 // ===== DECORATIVE ELEMENTS ANIMATION =====
@@ -322,9 +343,6 @@ function initImageOptimization() {
 function handleImageError() {
     console.warn('Image failed to load:', this.src);
     this.style.opacity = '0.5';
-    
-    // Optional: Add a placeholder image
-    // this.src = 'img/placeholder.jpg';
 }
 
 // Handle successful image load
@@ -396,14 +414,22 @@ window.addEventListener('resize', () => {
 
 // Handle beforeunload for smooth transitions
 window.addEventListener('beforeunload', () => {
-    // Add any cleanup or transition effects here
+    // Clean up observers
+    if (scrollObserver) {
+        scrollObserver.disconnect();
+    }
+    if (servicesObserver) {
+        servicesObserver.disconnect();
+    }
+    if (processObserver) {
+        processObserver.disconnect();
+    }
 });
 
 // ===== ERROR HANDLING =====
 // Global error handler
 window.addEventListener('error', (e) => {
     console.error('Script error occurred:', e.message);
-    // You could send this to an error tracking service
 });
 
 // Unhandled promise rejection handler
