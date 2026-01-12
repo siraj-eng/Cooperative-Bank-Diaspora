@@ -1,18 +1,21 @@
-/* ===== MODERN INSTITUTIONAL WARMTH DESIGN SYSTEM ===== */
+/* ============================================
+   MODERN INSTITUTIONAL WARMTH DESIGN SYSTEM
+   ============================================ */
 
-/* Fonts */
+/* ===== FONT IMPORTS ===== */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* Modern Color Palette - Institutional Warmth */
+/* ===== CSS VARIABLES ===== */
 :root {
-   /* Primary Colors */
+   /* === COLOR PALETTE === */
+   /* Primary Colors - Navy Blues */
    --navy-deep: #0A2540;
    --navy-mid: #1C3D5A;
    --navy-light: #2E5075;
    
-   /* Accent Colors - Warm Professional */
+   /* Accent Colors - Purple Theme */
    --accent-warm: #9370DB;          /* Medium Purple */
    --accent-deep: #4B0082;          /* Deep Purple */
    --accent-light: #B8A2E3;         /* Light Purple */
@@ -23,7 +26,7 @@
    --bg-white: #FFFFFF;
    --bg-offwhite: #F8FAFF;
    
-   /* Divider & Border */
+   /* Border & Divider Colors */
    --divider-lilac: #D8BFD8;        /* Soft Lilac */
    --border-light: #E9E4F4;
    --border-medium: #D4CCE6;
@@ -34,23 +37,23 @@
    --text-secondary: #4A5568;
    --text-light: #718096;
    
-   /* Status Colors */
+   /* Status & Brand Colors */
    --success: #10B981;
    --whatsapp: #25D366;
    --whatsapp-dark: #128C7E;
    --warning: #F59E0B;
    
-   /* Effects */
+   /* === EFFECTS & SHADOWS === */
    --shadow-subtle: 0 2px 12px rgba(10, 37, 64, 0.04);
    --shadow-medium: 0 4px 24px rgba(10, 37, 64, 0.08);
    --shadow-elevated: 0 8px 40px rgba(10, 37, 64, 0.12);
    --shadow-deep: 0 12px 60px rgba(10, 37, 64, 0.15);
    
-   /* Transitions */
+   /* === TRANSITIONS === */
    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
    
-   /* Border Radius */
+   /* === BORDER RADIUS === */
    --radius-sm: 8px;
    --radius-md: 16px;
    --radius-lg: 24px;
@@ -58,7 +61,7 @@
    --radius-full: 100px;
 }
 
-/* Base Reset */
+/* ===== BASE RESET & SETUP ===== */
 * {
    margin: 0;
    padding: 0;
@@ -83,13 +86,15 @@ body {
    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Selection */
+/* Selection Styling */
 ::selection {
    background-color: rgba(147, 112, 219, 0.2);
    color: var(--text-dark);
 }
 
-/* ===== FLOATING CONTACT ===== */
+/* ============================================
+   FLOATING WHATSAPP CONTACT
+   ============================================ */
 .floating-contact {
    position: fixed;
    bottom: 30px;
@@ -142,12 +147,15 @@ body {
    transform: translateX(0);
 }
 
+/* Floating Animation */
 @keyframes float {
    0%, 100% { transform: translateY(0); }
    50% { transform: translateY(-10px); }
 }
 
-/* ===== HEADER - Refined ===== */
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
 header {
    position: fixed;
    width: 100%;
@@ -170,7 +178,7 @@ header {
    justify-content: space-between;
 }
 
-/* Logo Section */
+/* === LOGO SECTION === */
 .logo-section {
    display: flex;
    align-items: center;
@@ -215,7 +223,7 @@ header {
    animation: pulse 2s infinite;
 }
 
-/* Navigation */
+/* === MAIN NAVIGATION === */
 .header-nav {
    display: flex;
    align-items: center;
@@ -290,6 +298,7 @@ header {
    border-radius: 2px;
 }
 
+/* Contact CTA Button */
 .cta-contact {
    background: linear-gradient(135deg, var(--accent-warm), var(--accent-deep));
    color: white !important;
@@ -307,7 +316,7 @@ header {
    box-shadow: var(--shadow-medium);
 }
 
-/* Mobile Toggle */
+/* === MOBILE MENU TOGGLE === */
 .mobile-toggle {
    display: none;
    flex-direction: column;
@@ -324,7 +333,7 @@ header {
    transition: var(--transition-smooth);
 }
 
-/* Header Accent */
+/* === HEADER ACCENT LINE === */
 .header-accent {
    position: absolute;
    bottom: 0;
@@ -346,7 +355,9 @@ header {
    50% { transform: translateX(100%); }
 }
 
-/* ===== HERO SECTION - Premium ===== */
+/* ============================================
+   HERO SECTION
+   ============================================ */
 .hero {
    min-height: 100vh;
    background: linear-gradient(135deg, var(--bg-lavender) 0%, #F0F2FF 100%);
@@ -355,7 +366,7 @@ header {
    padding-top: 100px;
 }
 
-/* Hero Ornament */
+/* === HERO BACKGROUND ORNAMENTS === */
 .hero-ornament {
    position: absolute;
    top: 0;
@@ -397,12 +408,13 @@ header {
    background-size: 1200px 120px;
 }
 
+/* Circle Rotation Animation */
 @keyframes rotate {
    from { transform: rotate(0deg); }
    to { transform: rotate(360deg); }
 }
 
-/* Hero Container */
+/* === HERO CONTAINER LAYOUT === */
 .hero-container {
    max-width: 1200px;
    margin: 0 auto;
@@ -415,7 +427,8 @@ header {
    z-index: 2;
 }
 
-/* Professional Tag */
+/* === HERO CONTENT - LEFT SIDE === */
+/* Professional Verification Badge */
 .professional-tag {
    display: inline-flex;
    align-items: center;
@@ -444,11 +457,12 @@ header {
    letter-spacing: 0.5px;
 }
 
-/* Name & Title */
+/* Name & Title Section */
 .name-title {
    margin-bottom: 2rem;
 }
 
+/* Headline Text */
 .headline-main {
    display: block;
    font-size: 3rem;
@@ -497,7 +511,7 @@ header {
    border-radius: 1px;
 }
 
-/* Trust Marks */
+/* === TRUST INDICATORS === */
 .trust-marks {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
@@ -550,7 +564,7 @@ header {
    font-weight: 700;
 }
 
-/* Action Buttons */
+/* === CALL-TO-ACTION BUTTONS === */
 .hero-actions {
    display: flex;
    flex-direction: column;
@@ -566,12 +580,14 @@ header {
    transition: var(--transition-smooth);
 }
 
+/* Primary Action Button */
 .primary-action {
    background: linear-gradient(135deg, var(--accent-warm), var(--accent-deep));
    color: white;
    box-shadow: var(--shadow-medium);
 }
 
+/* Secondary Action Button */
 .secondary-action {
    background: white;
    color: var(--text-dark);
@@ -579,6 +595,7 @@ header {
    border: 1px solid var(--border-light);
 }
 
+/* Button Wrapper */
 .btn-wrapper {
    padding: 1.5rem 2rem;
    display: flex;
@@ -589,7 +606,6 @@ header {
 .btn-icon {
    width: 48px;
    height: 48px;
-   background: rgba(255, 255, 255, 0.2);
    border-radius: var(--radius-md);
    display: flex;
    align-items: center;
@@ -646,7 +662,7 @@ header {
    transform: translateX(5px);
 }
 
-/* Verification Block */
+/* === VERIFICATION BLOCK === */
 .verification-block {
    margin-top: 2rem;
 }
@@ -672,7 +688,7 @@ header {
    transform: translateX(5px);
 }
 
-/* Hero Image */
+/* === HERO IMAGE - RIGHT SIDE === */
 .hero-image {
    position: relative;
 }
@@ -704,6 +720,7 @@ header {
    transform: scale(1.02);
 }
 
+/* Portrait Decoration Elements */
 .portrait-decoration {
    position: absolute;
    top: 0;
@@ -735,6 +752,7 @@ header {
    transform: translateY(-50%);
 }
 
+/* Portrait Badge */
 .portrait-badge {
    position: absolute;
    bottom: -15px;
@@ -771,9 +789,7 @@ header {
    font-weight: 700;
 }
 
-
-
-/* Open Account CTA */
+/* === OPEN ACCOUNT CTA === */
 .open-account-cta {
    display: flex;
    align-items: center;
@@ -815,7 +831,6 @@ header {
    align-items: center;
    justify-content: center;
    flex-shrink: 0;
-   background: rgba(255, 255, 255, 0.2);
 }
 
 .cta-icon i {
@@ -852,60 +867,53 @@ header {
    transform: translateX(5px);
 }
 
-/* Remove old stats showcase styles */
-.stats-showcase {
-   display: none !important;
-}
-
-/* Keep existing responsive styles for the new CTA */
-@media (max-width: 768px) {
-   .account-cta-btn {
-      max-width: 100%;
-   }
-   
-   .cta-wrapper {
-      padding: 1.2rem 1.5rem;
-   }
-   
-   .cta-main {
-      font-size: 1.1rem;
-   }
-}
-
-/* ===== BANK LOGOS SLIDER ===== */
-.bank-logos-slider {
-   max-width: 100%;
-   margin: 4rem auto 0;
-   padding: 2rem 0;
+/* ============================================
+   BANK LOGOS SLIDER
+   ============================================ */
+.partners-header {
+   max-width: 1200px;
+   margin: 1.5rem auto 0;
+   padding: 0 1rem;
    text-align: center;
 }
 
-.bank-logos-slider h3 {
+.partners-title {
    font-size: 1.5rem;
+   font-weight: 800;
    color: var(--text-dark);
-   margin-bottom: 1rem;
-   font-weight: 700;
+   margin: 0 0 1rem 0;
+   letter-spacing: 0.8px;
+   text-transform: uppercase;
+   line-height: 1.1;
+}
+
+.bank-logos-slider {
+   max-width: 100%;
+   margin: 1.5rem auto 0;
+   padding: 0;
+   text-align: center;
 }
 
 /* Slider Container */
 .slider {
-   height: 100px;
+   height: 90px;
    margin: 0 auto;
    overflow: hidden;
    position: relative;
    width: 100%;
 }
 
-/* Gradient edges */
+/* Gradient Edges */
 .slider::before,
 .slider::after {
    content: '';
    position: absolute;
    top: 0;
-   width: 100px;
+   width: 80px;
    height: 100%;
    z-index: 2;
    pointer-events: none;
+   opacity: 0.8;
 }
 
 .slider::before {
@@ -918,9 +926,9 @@ header {
    background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
 }
 
-/* Slide Track */
+/* Slide Track - Infinite Scroll */
 .slide-track {
-   animation: scroll 20s linear infinite;
+   animation: scroll 30s linear infinite;
    display: flex;
    align-items: center;
    width: calc(180px * 20); /* Total width for all slides */
@@ -929,41 +937,39 @@ header {
 
 /* Individual Slide */
 .slide {
-   height: 100px;
+   height: 90px;
    width: 180px;
+   width: 160px;
    display: flex;
    align-items: center;
    justify-content: center;
    flex-shrink: 0;
+   padding: 0 1rem;
 }
 
 .slide img {
    height: auto;
-   width: 150px;
-   max-height: 70px;
+   width: 140px;
+   max-height: 60px;
    object-fit: contain;
-   filter: grayscale(100%);
-   opacity: 0.7;
-   transition: all 0.3s ease;
+   filter: grayscale(0%) brightness(1.1) sepia(1) hue-rotate(60deg) saturate(1.5);
+   opacity: 0.9;
+   transition: all 0.4s ease;
 }
 
 .slide:hover img {
-   filter: grayscale(0%);
-   opacity: 1;
-   transform: scale(1.05);
+   filter: grayscale(100%) brightness(0.9);
+   opacity: 0.7;
+   transform: scale(1.02);
 }
 
-/* Animation */
+/* Slide Animation */
 @keyframes scroll {
-   0% { 
-      transform: translateX(0); 
-   }
-   100% { 
-      transform: translateX(calc(-180px * 10)); 
-   }
+   0% { transform: translateX(0); }
+   100% { transform: translateX(calc(-160px * 16)); }
 }
 
-/* Pause on hover */
+/* Pause on Hover */
 .slider:hover .slide-track {
    animation-play-state: paused;
 }
@@ -971,84 +977,22 @@ header {
 /* Slider Note */
 .slider-note {
    color: var(--text-light);
-   font-size: 0.9rem;
-   margin-top: 1rem;
+   font-size: 0.85rem;
+   margin-top: 0.8rem;
    font-style: italic;
+   opacity: 0.8;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-   .slider {
-      height: 80px;
-   }
-   
-   .slide {
-      height: 80px;
-      width: 140px;
-   }
-   
-   .slide img {
-      width: 120px;
-      max-height: 50px;
-   }
-   
-   .slide-track {
-      width: calc(140px * 20);
-   }
-   
-   .slider::before,
-   .slider::after {
-      width: 60px;
-   }
-   
-   @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-140px * 10)); }
-   }
-}
-
-@media (max-width: 480px) {
-   .bank-logos-slider {
-      margin: 3rem auto 0;
-   }
-   
-   .bank-logos-slider h3 {
-      font-size: 1.3rem;
-   }
-   
-   .slider {
-      height: 70px;
-   }
-   
-   .slide {
-      height: 70px;
-      width: 120px;
-   }
-   
-   .slide img {
-      width: 100px;
-      max-height: 40px;
-   }
-   
-   .slide-track {
-      width: calc(120px * 20);
-   }
-   
-   @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-120px * 10)); }
-   }
-}
-
-
-/* ===== ABOUT SECTION ===== */
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
 .about-section {
    background: var(--bg-cream);
    padding: 6rem 2rem;
    position: relative;
 }
 
-/* Section Header */
+/* === SECTION HEADER === */
 .section-header {
    text-align: center;
    margin-bottom: 4rem;
@@ -1091,7 +1035,7 @@ header {
    letter-spacing: 2px;
 }
 
-/* About Container */
+/* === ABOUT CONTAINER LAYOUT === */
 .about-container {
    max-width: 1200px;
    margin: 0 auto;
@@ -1101,7 +1045,7 @@ header {
    align-items: start;
 }
 
-/* About Visual */
+/* === LEFT COLUMN: VISUAL ELEMENTS === */
 .about-visual {
    position: relative;
 }
@@ -1111,6 +1055,7 @@ header {
    margin-bottom: 2rem;
 }
 
+/* Image Decoration */
 .image-decoration {
    position: absolute;
    top: -10px;
@@ -1127,61 +1072,6 @@ header {
    left: 0;
    right: 0;
    bottom: 0;
-   .section-header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-   }
-   .section-header h2 { margin-bottom: 0; }
-   .section-subtitle { margin: 0; }
-
-   .trust-indicators {
-      display: inline-flex;
-      gap: 0.75rem;
-      padding: 0.6rem 0.8rem;
-      margin: 0.8rem 0;
-      background: rgba(255,255,255,0.75);
-      border-radius: 12px;
-      align-items: center;
-   }
-   .trust-item {
-      display: inline-flex;
-      gap: 8px;
-      padding: 0;
-   }
-   .trust-item i { padding: 0.45rem; border-radius: 8px; font-size: 1rem; }
-
-   .trust-badge {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-   }
-   .trust-badge .badge-content {
-      display: inline-flex;
-      gap: 0.75rem;
-      align-items: center;
-      padding: 0.5rem 0.75rem;
-      border-radius: 12px;
-   }
-
-   .quick-stats { gap: 0.6rem; }
-   .stat { padding: 0.9rem 0.8rem; }
-   .stat-number { font-size: 1.25rem; }
-
-   /* About top wrapper: header + trust side-by-side */
-   .about-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      margin-bottom: 1.25rem;
-   }
-
-   @media (max-width: 900px) {
-      .about-top { flex-direction: column; align-items: center; text-align: center; }
-   }
    border: 2px solid var(--accent-light);
    border-radius: var(--radius-xl);
    opacity: 0.5;
@@ -1200,6 +1090,7 @@ header {
 .corner-3 { bottom: 10px; left: 10px; border-right: none; border-top: none; }
 .corner-4 { bottom: 10px; right: 10px; border-left: none; border-top: none; }
 
+/* About Portrait */
 .about-portrait {
    width: 100%;
    height: 400px;
@@ -1210,6 +1101,7 @@ header {
    box-shadow: var(--shadow-deep);
 }
 
+/* Visual Badge */
 .visual-badge {
    position: absolute;
    bottom: -20px;
@@ -1253,7 +1145,7 @@ header {
    font-weight: 700;
 }
 
-/* Credentials */
+/* === CREDENTIALS SECTION === */
 .credentials {
    display: flex;
    flex-direction: column;
@@ -1300,7 +1192,7 @@ header {
    color: var(--text-light);
 }
 
-/* About Content */
+/* === RIGHT COLUMN: CONTENT === */
 .about-content {
    display: flex;
    flex-direction: column;
@@ -1345,7 +1237,7 @@ header {
    margin: 0;
 }
 
-/* Responsibility Grid */
+/* === RESPONSIBILITY GRID === */
 .responsibility-grid {
    display: grid;
    grid-template-columns: repeat(2, 1fr);
@@ -1397,7 +1289,7 @@ header {
    margin: 0;
 }
 
-/* Approach Statement */
+/* === APPROACH STATEMENT === */
 .approach-statement {
    padding: 2rem;
    background: linear-gradient(135deg, rgba(147, 112, 219, 0.05), rgba(75, 0, 130, 0.02));
@@ -1446,7 +1338,7 @@ header {
    font-size: 1rem;
 }
 
-/* Trust Assurance */
+/* === TRUST ASSURANCE === */
 .trust-assurance {
    max-width: 800px;
    margin: 4rem auto 0;
@@ -1491,16 +1383,16 @@ header {
    margin: 0;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* === TABLET & SMALL DESKTOP (1024px) === */
 @media (max-width: 1024px) {
    .hero-container,
    .about-container {
       grid-template-columns: 1fr;
       gap: 3rem;
-   }
-   
-   .greeting-name {
-      font-size: 3rem;
    }
    
    .headline-main {
@@ -1523,6 +1415,7 @@ header {
       margin-right: auto;
    }
    
+   /* Mobile Navigation */
    .navbar {
       position: fixed;
       top: 70px;
@@ -1544,8 +1437,38 @@ header {
    .mobile-toggle {
       display: flex;
    }
+   
+   /* Slider Adjustments */
+   .slider {
+      height: 70px;
+   }
+   
+   .slide {
+      height: 70px;
+      width: 130px;
+   }
+   
+   .slide img {
+      width: 110px;
+      max-height: 45px;
+   }
+   
+   .slide-track {
+      width: calc(130px * 32);
+   }
+   
+   .slider::before,
+   .slider::after {
+      width: 50px;
+   }
+   
+   @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-130px * 16)); }
+   }
 }
 
+/* === TABLET (768px) === */
 @media (max-width: 768px) {
    .header-container {
       padding: 0 1rem;
@@ -1563,34 +1486,29 @@ header {
       grid-template-columns: 1fr;
    }
    
+   /* Remove old stats showcase */
    .stats-showcase {
-      flex-direction: column;
-      gap: 1rem;
+      display: none !important;
    }
    
-   .stat-separator {
-      width: 100%;
-      height: 1px;
+   /* Account CTA Button */
+   .account-cta-btn {
+      max-width: 100%;
    }
    
-   .partner-logos {
-      flex-direction: column;
-      align-items: center;
+   .cta-wrapper {
+      padding: 1.2rem 1.5rem;
    }
    
-   .assurance-content {
-      flex-direction: column;
-      text-align: center;
+   .cta-main {
+      font-size: 1.1rem;
    }
 }
 
+/* === MOBILE (576px) === */
 @media (max-width: 576px) {
    .hero-container {
       padding: 2rem 1rem;
-   }
-   
-   .greeting-name {
-      font-size: 2.5rem;
    }
    
    .headline-main {
@@ -1606,26 +1524,96 @@ header {
       height: 300px;
    }
    
-   .professional-title {
-      font-size: 1rem;
-   }
-   
    .btn-wrapper {
       padding: 1.2rem 1.5rem;
-   }
-   
-   .trust-assurance,
-   .partnership-section {
-      padding: 1.5rem;
    }
    
    .floating-contact {
       bottom: 20px;
       right: 20px;
    }
+   
+   /* Slider Adjustments */
+   .slider {
+      height: 60px;
+   }
+   
+   .slide {
+      height: 60px;
+      width: 110px;
+   }
+   
+   .slide img {
+      width: 90px;
+      max-height: 35px;
+   }
+   
+   .slide-track {
+      width: calc(110px * 32);
+   }
+   
+   @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-110px * 16)); }
+   }
+   
+   .slider-note {
+      font-size: 0.8rem;
+      margin-top: 0.6rem;
+   }
 }
 
-/* Animation for fade in */
+/* === MOBILE (480px) === */
+@media (max-width: 480px) {
+   .bank-logos-slider {
+      margin: 3rem auto 0;
+   }
+   
+   .bank-logos-slider h3 {
+      font-size: 1.3rem;
+   }
+   
+   .slider {
+      height: 70px;
+   }
+   
+   .slide {
+      height: 70px;
+      width: 120px;
+   }
+   
+   .slide img {
+      width: 100px;
+      max-height: 40px;
+   }
+   
+   .slide-track {
+      width: calc(120px * 20);
+   }
+   
+   @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-120px * 10)); }
+   }
+   
+   .slider-note {
+      font-size: 0.8rem;
+      margin-top: 0.6rem;
+   }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Pulse Animation */
+@keyframes pulse {
+   0% { opacity: 1; }
+   50% { opacity: 0.5; }
+   100% { opacity: 1; }
+}
+
+/* Fade In Up Animation */
 @keyframes fadeInUp {
    from {
       opacity: 0;
@@ -1637,6 +1625,7 @@ header {
    }
 }
 
+/* Staggered Animations for Elements */
 .responsibility-card,
 .trust-mark,
 .approach-point,
