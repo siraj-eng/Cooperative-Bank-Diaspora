@@ -1072,9 +1072,143 @@
    </section>
 
    <!-- ============================================
-   JAVASCRIPT
+        FOOTER SECTION
+   ============================================ -->
+   <footer class="footer-section">
+      <div class="footer-container">
+         <!-- Top Row: Main Footer Content -->
+         <div class="footer-top">
+            <!-- Company/Agent Info -->
+            <div class="footer-info">
+               <div class="footer-logo">
+                  <img src="img/The_Co-operative_Bank-Logo.wine.svg" 
+                       alt="Co-operative Bank Kenya" 
+                       class="footer-bank-logo">
+                  <div class="footer-partner-badge">
+                     <div class="footer-badge-dot"></div>
+                     <span>Official Partner</span>
+                  </div>
+               </div>
+               <h3 class="footer-agent-name">Sally Kangari</h3>
+               <p class="footer-agent-title">Diaspora Banking Agent</p>
+               <p class="footer-description">Helping Kenyans worldwide access Kenyan banking services through Co-operative Bank of Kenya.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+               <h4 class="footer-heading">Quick Links</h4>
+               <ul class="footer-nav">
+                  <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                  <li><a href="#about"><i class="fas fa-chevron-right"></i> About Me</a></li>
+                  <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                  <li><a href="#processes"><i class="fas fa-chevron-right"></i> Process</a></li>
+                  <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+               </ul>
+            </div>
+
+            <!-- Services Links -->
+            <div class="footer-services">
+               <h4 class="footer-heading">Banking Services</h4>
+               <ul class="services-list">
+                  <li><i class="fas fa-check-circle"></i> Personal Accounts</li>
+                  <li><i class="fas fa-check-circle"></i> Business Accounts</li>
+                  <li><i class="fas fa-check-circle"></i> Diaspora Banking</li>
+                  <li><i class="fas fa-check-circle"></i> Loan Applications</li>
+                  <li><i class="fas fa-check-circle"></i> Mortgage Services</li>
+               </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+               <h4 class="footer-heading">Contact Info</h4>
+               <div class="contact-details">
+                  <div class="contact-item">
+                     <i class="fas fa-envelope"></i>
+                     <div>
+                        <span>Email</span>
+                        <a href="mailto:sally@kenyadiasporabanking.com">sally@kenyadiasporabanking.com</a>
+                     </div>
+                  </div>
+                  <div class="contact-item">
+                     <i class="fas fa-phone"></i>
+                     <div>
+                        <span>Phone</span>
+                        <a href="tel:+123456778">+1 234 567 78</a>
+                     </div>
+                  </div>
+                  <div class="contact-item">
+                     <i class="fab fa-whatsapp"></i>
+                     <div>
+                        <span>WhatsApp</span>
+                        <a href="https://wa.me/1234567890" target="_blank">+1 234 567 890</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Middle Row: Verification & Trust -->
+         <div class="footer-middle">
+            <div class="verification-info">
+               <div class="verification-item">
+                  <i class="fas fa-certificate"></i>
+                  <div>
+                     <span>Agent ID:</span>
+                     <strong>DB124</strong>
+                  </div>
+               </div>
+               <div class="verification-item">
+                  <i class="fas fa-shield-alt"></i>
+                  <div>
+                     <span>Status:</span>
+                     <strong>Verified Banking Agent</strong>
+                  </div>
+               </div>
+               <a href="https://diaspora.co-opbank.co.ke/agents/" class="verify-link" target="_blank">
+                  <i class="fas fa-external-link-alt"></i>
+                  Verify on Official Bank Portal
+               </a>
+            </div>
+         </div>
+
+         <!-- Bottom Row: Copyright & Social -->
+         <div class="footer-bottom">
+            <!-- Social Media Links -->
+            <div class="footer-social">
+               <a href="https://www.facebook.com/" class="social-icon" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+               </a>
+               <a href="https://twitter.com/" class="social-icon" target="_blank">
+                  <i class="fab fa-twitter"></i>
+               </a>
+               <a href="https://www.linkedin.com/" class="social-icon" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+               </a>
+               <a href="https://www.instagram.com/" class="social-icon" target="_blank">
+                  <i class="fab fa-instagram"></i>
+               </a>
+               <a href="https://wa.me/1234567890" class="social-icon whatsapp" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+               </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+               <p>&copy; <span id="currentYear"></span> Sally Kangari | Diaspora Banking Agent. All rights reserved.</p>
+               <p class="disclaimer">Agent of Co-operative Bank of Kenya. All banking services subject to bank approval.</p>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- ============================================
+        JAVASCRIPT
    ============================================ -->
    <script src="main.js"></script>
+   <script>
+      // Set current year in copyright
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+   </script>
    
 </body>
 </html>
