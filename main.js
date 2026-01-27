@@ -1,6 +1,6 @@
 // ============================================
 // MODERN INSTITUTIONAL INTERACTIONS
-// Main JavaScript for Banking Agent Website
+// Main JavaScript for Referral Banking Agent Website
 // ============================================
 
 // ===== DOM ELEMENTS =====
