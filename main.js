@@ -372,6 +372,7 @@ function initializePage() {
     initKeyboardNavigation();
     initDecorativeAnimations();
     initImageOptimization();
+    initContactForm();
 }
 
 // Update current year in footer
@@ -521,4 +522,102 @@ function downloadAllDocuments() {
             document.body.removeChild(link);
         }, index * 300); // 300ms delay between downloads
     });
+}
+
+// ===== CONTACT FORM HANDLER =====
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
+    
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalBtnText = submitBtn.innerHTML;
+        
+        try {
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
+            
+            // Send form data via fetch
+            const response = await fetch('send-email.php', {
+                method: 'POST',
+                body: formData
+            });
+            
+            // Check if response is ok
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            // Try to parse JSON
+            let result;
+            try {
+                result = await response.json();
+            } catch (e) {
+                console.error('Failed to parse JSON response:', e);
+                console.log('Response text:', await response.text());
+                throw new Error('Server returned invalid response');
+            }
+            
+            if (result.success) {
+                // Show success message
+                showFormNotification(result.message, 'success');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Restore button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            } else {
+                // Show error message
+                showFormNotification(result.message || 'An error occurred. Please try again.', 'error');
+                
+                // Restore button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            console.error('Error details:', error.message);
+            showFormNotification('Connection error. Please check your internet and try again.', 'error');
+            
+            // Restore button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        }
+    });
+}
+
+// Show form notification
+function showFormNotification(message, type) {
+    // Remove existing notification if any
+    const existingNotification = document.querySelector('.form-notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    const contactForm = document.getElementById('contactForm');
+    const notification = document.createElement('div');
+    notification.className = `form-notification form-notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+            <span>${message}</span>
+        </div>
+    `;
+    
+    contactForm.parentNode.insertBefore(notification, contactForm);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        notification.classList.add('notification-fade-out');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 5000);
 }
