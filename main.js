@@ -495,3 +495,30 @@ function removeClassWithAnimation(element, className, duration = 300) {
         element.classList.remove(`${className}-removing`);
     }, duration);
 }
+
+// ===== DOCUMENT DOWNLOADS =====
+function downloadAllDocuments() {
+    // Array of documents to download
+    const documents = [
+        {
+            url: 'DEBIT CARD APPLICATION FORM_new.pdf',
+            name: 'Debit-Card-Application-Form.pdf'
+        },
+        {
+            url: 'Diaspora Banking Personal Account Opening Form (6).pdf',
+            name: 'Personal-Account-Opening-Form.pdf'
+        }
+    ];
+    
+    // Download each document with a slight delay
+    documents.forEach((doc, index) => {
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.href = doc.url;
+            link.download = doc.name;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }, index * 300); // 300ms delay between downloads
+    });
+}
