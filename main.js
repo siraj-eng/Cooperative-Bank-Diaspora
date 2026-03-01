@@ -524,6 +524,20 @@ function downloadAllDocuments() {
     });
 }
 
+// Download a file that lives in the same folder as index.html.
+// @param {string} filename  relative path / name of the PDF
+function downloadFile(filename) {
+    // encode spaces/unsafe characters
+    const href = encodeURI(filename);
+
+    const a = document.createElement('a');
+    a.href = href;
+    a.download = '';        // empty string forces download
+    document.body.appendChild(a);   // some browsers need it in the DOM
+    a.click();
+    document.body.removeChild(a);
+}
+
 // ===== CONTACT FORM HANDLER =====
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');

@@ -755,16 +755,21 @@
                      <i class="far fa-file-alt"></i>
                   </div>
                </div>
-               
+
                <div class="step-card">
                   <div class="card-content">
                      <h3 class="step-title">Documentation Guidance</h3>
-                     <p class="step-description">Clear guidance is provided on personal or business documentation required by the bank.</p>
+                     <p class="step-description">
+                        Clear guidance is provided on personal, business or diaspora
+                        documentation required by the bank.
+                     </p>
                   </div>
-                  
-                  <button class="download-all-btn" onclick="downloadAllDocuments()">
+
+                  <button type="button"
+                          class="step-cta"
+                          onclick="downloadFile('diaspora-documentation-guidance.pdf')">
                      <i class="fas fa-download"></i>
-                     <span>Download All Documents</span>
+                     <span>Download Diaspora Guidance</span>
                   </button>
                </div>
             </div>
@@ -778,7 +783,7 @@
                </div>
             </div>
 
-            <!-- Step 3: Application Submission -->
+            <!-- Step 3: Debit Card Application -->
             <div class="process-step">
                <div class="step-header">
                   <div class="step-badge">
@@ -793,17 +798,22 @@
                      <i class="far fa-paper-plane"></i>
                   </div>
                </div>
-               
+
                <div class="step-card">
                   <div class="card-content">
-                     <h3 class="step-title">Application Submission</h3>
-                     <p class="step-description">Applications are submitted strictly through approved Co-operative Bank of Kenya systems.</p>
+                     <h3 class="step-title">Debit Card Application</h3>
+                     <p class="step-description">
+                        Apply for a debit card through our streamlined process.
+                     </p>
                   </div>
-                  
-                  <a href="https://diaspora.co-opbank.co.ke/accounts/" target="_blank" class="step-cta">
-                     <i class="fas fa-external-link-alt"></i>
-                     <span>Submit Application</span>
-                  </a>
+
+                  <!-- button that triggers a download -->
+                  <button type="button"
+                          class="step-cta"
+                          onclick="downloadFile('debit-card-application.pdf')">
+                     <i class="fas fa-download"></i>
+                     <span>Download Debit Card Form</span>
+                  </button>
                </div>
             </div>
 
@@ -816,7 +826,7 @@
                </div>
             </div>
 
-            <!-- Step 4: Approval & Activation -->
+            <!-- Step 4: Loans & Mortgages application-->
             <div class="process-step">
                <div class="step-header">
                   <div class="step-badge">
@@ -828,20 +838,24 @@
                      </div>
                   </div>
                   <div class="step-icon">
-                     <i class="far fa-check-circle"></i>
+                     <i class="fas fa-building"></i>
                   </div>
                </div>
-               
+
                <div class="step-card">
                   <div class="card-content">
-                     <h3 class="step-title">Approval & Account Activation</h3>
-                     <p class="step-description">Accounts are activated upon successful bank approval.</p>
+                     <h3 class="step-title">Loans and Mortgages</h3>
+                     <p class="step-description">
+                        Assist clients with loan applications and mortgage processes
+                     </p>
                   </div>
-                  
-                  <a href="https://diaspora.co-opbank.co.ke/accounts/" target="_blank" class="step-cta">
-                     <i class="fas fa-info-circle"></i>
-                     <span>Get Account Details</span>
-                  </a>
+
+                  <button type="button"
+                          class="step-cta"
+                          onclick="downloadFile('mortgage-application.pdf')">
+                     <i class="fas fa-download"></i>
+                     <span>Download Mortgage Info</span>
+                  </button>
                </div>
             </div>
          </div>
