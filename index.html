@@ -685,7 +685,7 @@
    </section>
 
    <!-- ============================================
-      PROCESS SECTION
+        PROCESS SECTION
    ============================================ -->
    <section class="process-section" id="processes">
       <div class="process-container">
@@ -698,6 +698,10 @@
             </div>
             <h2>Account Opening Process</h2>
             <p class="section-subtitle">A Clear Journey to Kenyan Banking</p>
+            <button onclick="downloadProcessPDF()" class="download-pdf-btn">
+               <i class="fas fa-download"></i>
+               <span>Download Complete Process Guide</span>
+            </button>
          </div>
 
          <!-- Journey Map -->
@@ -766,7 +770,7 @@
                   </div>
 
                   <button type="button"
-                          class="step-cta"
+                          class="step-cta download-btn"
                           onclick="downloadFile('diaspora-documentation-guidance.pdf')">
                      <i class="fas fa-download"></i>
                      <span>Download Diaspora Guidance</span>
@@ -809,7 +813,7 @@
 
                   <!-- button that triggers a download -->
                   <button type="button"
-                          class="step-cta"
+                          class="step-cta download-btn"
                           onclick="downloadFile('debit-card-application.pdf')">
                      <i class="fas fa-download"></i>
                      <span>Download Debit Card Form</span>
@@ -851,8 +855,8 @@
                   </div>
 
                   <button type="button"
-                          class="step-cta"
-                          onclick="downloadFile('mortgage-application.pdf')">
+                          class="step-cta download-btn"
+                          onclick="downloadFile('Mortgage application form.pdf')">
                      <i class="fas fa-download"></i>
                      <span>Download Mortgage Info</span>
                   </button>
@@ -954,7 +958,7 @@
                      </div>
                      <div class="method-content">
                         <h4>Email</h4>
-                        <a href="mailto: support@kenyadiasporabanking.com" class="contact-link">
+                        <a href="mailto:support@kenyadiasporabanking.com" class="contact-link">
                            support@kenyadiasporabanking.com
                         </a>
                         <p class="response-time">Response within 24 hours</p>
@@ -1005,7 +1009,7 @@
             
             <!-- RIGHT COLUMN: Contact Form -->
             <div class="contact-form-container">
-               <form class="contact-form" id="contactForm" action="send-email.php" method="POST">
+               <form class="contact-form" id="contactForm">
                   <!-- First Name -->
                   <div class="form-group">
                      <label for="firstName">First Name</label>
@@ -1154,7 +1158,7 @@
                      <i class="fab fa-whatsapp"></i>
                      <div>
                         <span>WhatsApp</span>
-                        <a href="https://wa.me/1234567890" target="_blank">+1 646 577 4815</a>
+                        <a href="https://wa.me/16465774815" target="_blank">+1 646 577 4815</a>
                      </div>
                   </div>
                </div>
@@ -1192,7 +1196,7 @@
                <a href="https://www.instagram.com/" class="social-icon" target="_blank">
                   <i class="fab fa-instagram"></i>
                </a>
-               <a href="https://wa.me/1234567890" class="social-icon whatsapp" target="_blank">
+               <a href="https://wa.me/16465774815" class="social-icon whatsapp" target="_blank">
                   <i class="fab fa-whatsapp"></i>
                </a>
             </div>
@@ -1211,8 +1215,13 @@
    ============================================ -->
    <script src="main.js"></script>
    <script>
-      // Set current year in copyright
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      // Set current year in copyright (fallback if main.js doesn't set it)
+      document.addEventListener('DOMContentLoaded', function() {
+         const yearSpan = document.getElementById('currentYear');
+         if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+         }
+      });
    </script>
    
 </body>
