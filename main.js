@@ -18,9 +18,9 @@ let processObserver;
 // ===== PDF DOWNLOAD FUNCTIONS =====
 // Document mapping for downloads
 const documentMapping = {
-    'diaspora-documentation-guidance.pdf': {
-        url: 'Diaspora Banking Personal Account Opening Form (6).pdf',
-        name: 'Diaspora-Banking-Personal-Account-Opening-Form.pdf'
+    'Diaspora-Banking-Guidance.pdf': {
+        url: 'Diaspora-Banking-Guidance.pdf',
+        name: 'Diaspora-Banking-Guidance.pdf'
     },
     'debit-card-application.pdf': {
         url: 'DEBIT CARD APPLICATION FORM_new.pdf',
