@@ -44,8 +44,8 @@ function downloadProcessPDF() {
             name: 'Debit-Card-Application-Form.pdf'
         },
         {
-            url: 'Diaspora Banking Personal Account Opening Form (6).pdf',
-            name: 'Diaspora-Banking-Personal-Account-Opening-Form.pdf'
+            url: 'Diaspora-Banking-Guidance.pdf',
+            name: 'Diaspora-Banking-Guidance.pdf'
         }
     ];
     
